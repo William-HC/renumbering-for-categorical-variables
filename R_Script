@@ -1,0 +1,34 @@
+
+# Function code:
+
+cod<-function(x){
+    
+    y    <-unique(x[,2]) 
+    z    <-1:length(y)
+    df   <-data.frame(y,z)
+    sel  <-c(names(x)[2],paste(names(x)[2],"rec",sep="_"))
+    
+    names(df) <-c(sel)
+    k         <-merge(x,df)
+    k
+    
+}
+
+
+
+# Example of dataset:
+
+ID  <-1:5
+x   <-c("A","B","A","B","C")
+dat <-data.frame(ID,x)
+dat
+
+
+
+# Run the function
+
+cod(dat)
+
+
+
+# Finally, the variable is renumbered
